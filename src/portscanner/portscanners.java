@@ -70,7 +70,7 @@ public class portscanners extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
      Object source = e.getSource();
     String host = te.getText();
-    
+   
     
     if(source ==but){
      if(ch.isSelected())Ports(commonports,host);
@@ -82,9 +82,9 @@ public class portscanners extends JFrame implements ActionListener{
     public String Ports(int[] ports,String host){
       for(int c: ports){
     try(Socket s = new Socket(host,c)){
-        ar.setText("port open"+c);
+        ar.append("\nport open"+c);
 }catch(Exception g){
-     ar.setText("Ports are closed");
+     
 }
     
 }     
